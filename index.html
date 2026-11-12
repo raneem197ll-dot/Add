@@ -585,6 +585,17 @@ html,body{overflow-x:clip}
 .kin .hl{padding-top:.4em;margin-top:-.4em}.kin .hl::before{top:.38em!important;left:calc(47.6% + .2em)!important}
 .kin .hl::before{display:none!important}
 .kin .hl::after{background:linear-gradient(90deg,#FBBF24,#FDE68A,#FBBF24)!important;background-size:200% 100%;animation:ul .9s cubic-bezier(.22,1,.36,1) 1.1s forwards,ulg 5s ease-in-out 2.2s infinite,ulm 4s linear 2s infinite!important}@keyframes ulm{to{background-position:-200% 0}}
+
+/* الحركات (الفتحة والضمة) فيروزية، والخط تحتها أصفر */
+.kin .hl{background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;-webkit-text-fill-color:#F1F3FA!important;color:#F1F3FA;animation:kinIn .9s cubic-bezier(.22,1,.36,1) .59s forwards,wfloat 6s ease-in-out 2s infinite!important}
+.kin .hl .hk{color:#2DD4BF;-webkit-text-fill-color:#2DD4BF;animation:hkGlow 3.2s ease-in-out 1.8s infinite}
+@keyframes hkGlow{50%{text-shadow:0 0 .35em rgba(45,212,191,.9)}}
+@media (prefers-reduced-motion:reduce){.kin .hl .hk{animation:none}}
+
+.kin .hl{position:relative}
+.kin .hl .hm{position:absolute;font-style:normal;color:#2DD4BF;-webkit-text-fill-color:#2DD4BF;line-height:1;pointer-events:none;animation:hkGlow 3.2s ease-in-out 1.8s infinite}
+.kin .hl .hm1{left:calc(78% + .04em);top:.46em}
+.kin .hl .hm2{left:calc(46% - .06em);top:.46em}
 </style>
 </head>
 <body>
@@ -883,7 +894,7 @@ function viewHome(){
   <section class="hero">
     <div class="hero-text">
       <span class="eyebrow"><i></i>لمشاريع التخرج والهاكاثونات وريادة الأعمال</span>
-      <h1 class="kin" style="margin-top:1rem"><span class="w" style="--i:0">لكل</span> <span class="w" style="--i:1">مشروع</span> <span class="hl w" style="--i:2">عَضُد</span></h1>
+      <h1 class="kin" style="margin-top:1rem"><span class="w" style="--i:0">لكل</span> <span class="w" style="--i:1">مشروع</span> <span class="hl w" style="--i:2">عضد<i class="hm hm1" aria-hidden="true">&#x200C;َ</i><i class="hm hm2" aria-hidden="true">&#x200C;ُ</i></span></h1>
       <p class="lede">بدلًا من أن تكتب «مين يعرف يبرمج؟» في قروبات الجامعة والهاكاثونات، انشر مشروعك وحدِّد التخصصات التي تنقصك، ودع أصحاب المهارة يصلون إليك.</p>
       <form class="search" id="heroSearch" role="search"><label class="sr" for="hq">ابحث</label>${ic('i-search')}<input id="hq" type="text" placeholder="مهارة أو مشروع، مثل: طباعة 3D" autocomplete="off"><button class="btn" type="submit">ابحث</button></form>
       <div class="quick">جرّب: ${['طباعة 3D','مطوّر تطبيقات','مصمم UI/UX','معلق صوتي','محلل مالي'].map(q=>`<button class="chip" data-quick="${q}">${q}</button>`).join('')}</div>
