@@ -416,6 +416,161 @@ footer a:hover{color:var(--ink)}
   .cta-band{padding:1.4rem}
   .kpis b{font-size:1.2rem}
 }
+
+/* ---- v10: mobile ease-of-use ---- */
+.xtabs{display:flex;gap:.35rem;padding:.3rem;margin:0 0 1.25rem;background:var(--surface);border:1px solid var(--line);border-radius:1rem;position:sticky;top:4.4rem;z-index:15;box-shadow:0 8px 24px -16px #000}
+.xtabs a{flex:1;display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.6rem .5rem;border-radius:.75rem;font-weight:700;font-size:.95rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+.xtabs a .ic{width:1.1rem;height:1.1rem}
+.xtabs a em{font-style:normal;font-size:.72rem;padding:.05rem .45rem;border-radius:99px;background:var(--surface-2);color:var(--muted)}
+.xtabs a[aria-selected="true"]{background:var(--primary-soft);color:var(--ink);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--primary) 45%,transparent)}
+.xtabs a[aria-selected="true"] em{background:var(--primary);color:#fff}
+.acc-btn{display:none;align-items:center;gap:.35rem;background:var(--surface-2);border:1px solid var(--line);color:var(--ink);font:inherit;font-weight:700;font-size:.85rem;padding:.4rem .8rem;border-radius:99px;cursor:pointer}
+.acc-btn .chev{width:1rem;height:1rem;transition:transform .2s}
+.is-open>.acc-sum .acc-btn .chev,.is-open .acc-btn .chev,.acc-btn[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.acc-sum{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-top:.55rem}
+.acc-sum>span{display:inline-flex;align-items:center;gap:.35rem;font-size:.85rem;color:var(--muted)}
+.acc-sum>span.soon{color:var(--spark)}
+.acc-sum .ic{width:1rem;height:1rem}
+.open-link{margin-top:.8rem}
+.ftoggle{display:none;align-items:center;gap:.4rem;background:var(--surface-2);border:1px solid var(--line);color:var(--ink);font:inherit;font-weight:700;padding:.65rem .9rem;border-radius:.8rem;cursor:pointer;white-space:nowrap;position:relative}
+.ftoggle .ic{width:1.1rem;height:1.1rem}
+.fbadge{display:grid;place-items:center;min-width:1.25rem;height:1.25rem;border-radius:99px;background:var(--bulb);color:#fff;font-size:.72rem;padding:0 .3rem}
+.verse summary{list-style:none;cursor:default}.verse summary::-webkit-details-marker{display:none}
+.vmore{display:none}
+.top::after{content:"";position:absolute;inset-inline:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--primary) 60%,transparent),transparent);opacity:.55;pointer-events:none}
+.top .search-btn{display:none}
+@media (max-width:48rem){
+  .top .wrap{min-height:3.5rem}
+  .top .search-btn{display:grid}
+  .xtabs{top:3.6rem;margin-bottom:1rem}
+  .xtabs a{font-size:.88rem;padding:.55rem .25rem;gap:.3rem}.xtabs a .ic{display:none}
+  .page-head{align-items:flex-start;gap:.75rem;margin-bottom:1rem}
+  .page-head p{display:none}
+  .page-head h1{font-size:1.6rem!important}
+  .page-head .btn{padding:.55rem .9rem;font-size:.9rem}
+  .acc-btn,.ftoggle{display:inline-flex}
+  .acc-body{display:none}
+  .is-open>.tbody .acc-body,.is-open>.ebody .acc-body,.is-open>.acc-body,.is-open .acc-body{display:block}
+  .filters{padding:.8rem;gap:.7rem}
+  .fsearch{flex-wrap:nowrap!important;gap:.5rem}
+  .fsearch .search{flex:1;min-width:0}
+  .fpanel{display:none}
+  .filters.open .fpanel{display:grid;gap:.7rem;padding-top:.3rem;border-top:1px solid var(--line)}
+  .filters.open .ftoggle{background:var(--primary-soft);border-color:color-mix(in srgb,var(--primary) 50%,transparent)}
+  .fpanel .frow{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+  .tcard .acc-sum,.ecard .acc-sum{margin-top:.4rem}
+  .hero .quick{display:none}
+  .hero .lede{font-size:1rem}
+  .stats .stat b{font-size:1.5rem}
+  .verse{padding:1rem}
+  .verse summary{cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center}
+  .verse summary .sym{width:5rem}
+  .vmore{display:inline-flex;align-items:center;gap:.3rem;color:var(--primary);font-weight:700;font-size:.85rem}
+  .verse[open] .vmore .chev{transform:rotate(180deg)}
+  .verse>div{margin-top:.8rem}
+}
+@media (min-width:48.01rem){ .filters .fpanel{display:block} .filters .fpanel .frow{margin-top:.2rem} }
+@media (min-width:48.01rem){
+  .xtabs{max-width:30rem}
+  .acc-sum{display:none}
+  .verse{display:block}
+  .verse summary{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2rem;align-items:center}
+  .verse>div{padding-inline-start:12rem;margin-top:-1.2rem}
+}
+
+/* ---- v11: immersive hero + three-dot menu ---- */
+.top .wrap{grid-template-columns:1fr auto!important}
+.nav{display:none!important}
+.top .search-btn{display:none!important}
+.more{position:relative}
+.more-btn svg{width:1.2rem;height:1.2rem;fill:currentColor}
+.more-menu{position:absolute;top:calc(100% + .6rem);inset-inline-start:0;min-width:13rem;padding:.4rem;border-radius:1rem;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);box-shadow:0 24px 60px -20px #000;display:grid;gap:.15rem;opacity:0;transform:translateY(-8px) scale(.97);transform-origin:top left;pointer-events:none;transition:opacity .16s,transform .16s;z-index:40}
+.more-menu.open{opacity:1;transform:none;pointer-events:auto}
+.more-menu a{display:flex;align-items:center;gap:.65rem;padding:.7rem .9rem;border-radius:.7rem;color:var(--muted);text-decoration:none;font-weight:600}
+.more-menu a .ic{width:1.15rem;height:1.15rem}
+.more-menu a:hover{background:var(--surface-2);color:var(--ink)}
+.more-menu a[aria-current="page"]{background:var(--primary-soft);color:var(--ink);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--primary) 45%,transparent)}
+.more-menu a[aria-current="page"] .ic{color:var(--primary)}
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-5rem -3rem -2rem;z-index:-1;pointer-events:none;background:radial-gradient(40rem 26rem at 78% 40%,rgba(108,92,255,.22),transparent 70%),radial-gradient(22rem 16rem at 62% 60%,rgba(239,68,68,.12),transparent 70%),radial-gradient(26rem 18rem at 12% 10%,rgba(45,212,191,.10),transparent 70%);animation:aur 12s ease-in-out infinite alternate}
+@keyframes aur{to{transform:translate3d(-2%,2%,0) scale(1.06);opacity:.85}}
+.stage{perspective:1100px;perspective-origin:50% 40%;height:clamp(300px,40vw,470px);position:relative;touch-action:pan-y;cursor:grab}
+.scene{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(calc(var(--rx,0)*1deg)) rotateY(calc(var(--ry,0)*1deg));will-change:transform}
+.scene>*{position:absolute;transform-style:preserve-3d}
+.floor{inset:auto 0 -4% 0;height:62%;transform:translateZ(-110px) rotateX(74deg);background-image:linear-gradient(rgba(139,133,255,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(139,133,255,.35) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent);mask-image:radial-gradient(closest-side,#000 40%,transparent)}
+.orb{left:50%;top:46%;width:60%;aspect-ratio:1;margin:-30% 0 0 -30%;border-radius:50%;background:radial-gradient(circle,rgba(239,68,68,.30),rgba(108,92,255,.22) 45%,transparent 70%);filter:blur(10px);transform:translateZ(-40px);animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:translateZ(-40px) scale(1.12);opacity:.8}}
+.ring{left:50%;top:50%;border-radius:50%;border:1.5px dashed rgba(139,133,255,.45)}
+.ring.r1{width:78%;aspect-ratio:1;margin:-39% 0 0 -39%;transform:translateZ(-10px) rotateX(72deg);animation:spin 28s linear infinite}
+.ring.r2{width:56%;aspect-ratio:1;margin:-28% 0 0 -28%;border-color:rgba(45,212,191,.45);transform:translateZ(40px) rotateX(72deg);animation:spin 20s linear infinite reverse}
+@keyframes spin{to{rotate:360deg}}
+.logo3d{left:18%;right:18%;top:14%;transform:translateZ(110px);animation:bob 6s ease-in-out infinite;filter:drop-shadow(0 36px 28px rgba(0,0,0,.55)) drop-shadow(0 0 28px rgba(239,68,68,.22))}
+.logo3d .sym{width:100%;height:auto;display:block}
+@keyframes bob{50%{transform:translateZ(130px) translateY(-8px)}}
+.fc{padding:.5rem .85rem;border-radius:.9rem;background:color-mix(in srgb,var(--surface) 78%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);box-shadow:0 18px 36px -18px #000;font-weight:700;font-size:.85rem;white-space:nowrap;display:flex;align-items:center;gap:.5rem;animation:flt 7s ease-in-out infinite}
+.fc i{width:.55rem;height:.55rem;border-radius:50%;display:block}
+.fc .g-tech{background:#8B85FF}.fc .g-design{background:#E879B9}.fc .g-biz{background:#FBBF24}.fc .g-content{background:#2DD4BF}
+.fc.c1{top:8%;right:2%;transform:translateZ(170px)}
+.fc.c2{top:40%;left:0;transform:translateZ(60px);animation-delay:-2s}
+.fc.c3{bottom:20%;right:0;transform:translateZ(140px);animation-delay:-4s}
+.fc.c4{bottom:6%;left:14%;transform:translateZ(190px);animation-delay:-1s}
+.fc.proj{top:2%;left:4%;transform:translateZ(150px);flex-direction:column;align-items:flex-start;gap:.15rem;animation-delay:-3s;background:color-mix(in srgb,var(--primary) 22%,var(--surface))}
+.fc.proj small{color:var(--spark);font-size:.7rem}.fc.proj span{color:var(--muted);font-weight:500;font-size:.75rem}
+.fc.match{bottom:0;right:22%;transform:translateZ(90px);animation-delay:-5s;color:var(--ink)}
+@keyframes flt{50%{translate:0 -10px}}
+.pt{width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 12px var(--primary);animation:flt 5s ease-in-out infinite}
+.pt.p1{top:20%;left:38%;transform:translateZ(200px)}.pt.p2{top:62%;left:30%;transform:translateZ(120px);background:#2DD4BF;box-shadow:0 0 12px #2DD4BF}
+.pt.p3{top:30%;right:30%;transform:translateZ(60px);background:#EF4444;box-shadow:0 0 12px #EF4444}.pt.p4{top:76%;right:34%;transform:translateZ(180px)}.pt.p5{top:12%;left:58%;transform:translateZ(20px);background:#FBBF24;box-shadow:0 0 12px #FBBF24}
+.phil{list-style:none;padding:0;margin:.9rem 0 0;display:grid;gap:.6rem}
+.phil li{position:relative;padding-inline-start:1.3rem;color:var(--muted);line-height:1.8}
+.phil li b{color:var(--ink)}
+.phil li::before{content:"";position:absolute;inset-inline-start:0;top:.7em;width:.6rem;height:.6rem;border-radius:50%}
+.phil li:nth-child(1)::before{background:#2DD4BF}.phil li:nth-child(2)::before{background:#EF4444;box-shadow:0 0 10px #EF4444}.phil li:nth-child(3)::before{background:#EDF0F7}
+@media (max-width:48rem){
+  .hero .stage{order:-1;height:285px;margin-bottom:-.5rem}
+  .logo3d{left:14%;right:14%;top:16%}
+  .fc{font-size:.75rem;padding:.4rem .65rem}
+  .fc.proj{display:none}
+  .more-menu{inset-inline-start:auto;inset-inline-end:0;transform-origin:top right}
+}
+@media (prefers-reduced-motion:reduce){.scene *,.hero::before{animation:none!important}}
+
+.stage{overflow:clip}
+html,body{overflow-x:clip}
+.hero{overflow-x:clip}
+@media (max-width:48rem){.fc.c1{right:12%;top:6%}.fc.c3{right:10%}.fc.c2{left:3%}.fc.c4{left:16%}.fc.match{right:26%}}
+
+/* ---- v12: creative network hero ---- */
+.hero{display:flex!important;align-items:center;min-height:clamp(540px,64vh,660px);padding:2.5rem 0;overflow:visible}
+.hero::before{inset:-6rem -3rem -3rem!important;background:radial-gradient(34rem 24rem at 25% 45%,rgba(108,92,255,.2),transparent 70%),radial-gradient(18rem 14rem at 40% 60%,rgba(239,68,68,.10),transparent 70%),radial-gradient(24rem 16rem at 90% 10%,rgba(45,212,191,.09),transparent 70%)!important}
+.hero-text{max-width:min(37rem,100%);position:relative;z-index:1}
+#net{position:absolute;inset:0 -3rem;width:calc(100% + 6rem);height:100%;z-index:0;display:block}
+.typebar{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:1.4rem}
+.tcount{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .8rem;border-radius:.9rem;background:color-mix(in srgb,var(--surface) 85%,transparent);border:1px solid var(--line);color:var(--ink);font:inherit;font-weight:700;font-size:.88rem;cursor:pointer;backdrop-filter:blur(8px);transition:transform .15s,border-color .15s}
+.tcount:hover{transform:translateY(-2px);border-color:var(--primary)}
+.tcount .ic{width:1.05rem;height:1.05rem;color:var(--muted)}
+.tcount b{min-width:1.5rem;height:1.5rem;display:grid;place-items:center;border-radius:99px;background:var(--surface-2);font-size:.82rem}
+.tcount.big{padding:.65rem 1rem;font-size:.98rem;border-color:color-mix(in srgb,var(--primary) 50%,var(--line));background:var(--primary-soft)}
+.tcount.big b{background:var(--primary);color:#fff}
+.chip .cnt{font-style:normal;font-size:.72rem;margin-inline-start:.4rem;padding:.02rem .4rem;border-radius:99px;background:var(--surface-2);color:var(--muted)}
+.chip[aria-pressed="true"] .cnt{background:rgba(255,255,255,.18);color:inherit}
+@media (max-width:48rem){
+  .hero{display:block!important;min-height:0;padding:310px 0 1rem}
+  .hero-text{max-width:none}
+  .hero .stage{display:none}
+  #net{inset:0 -1rem;width:calc(100% + 2rem)}
+  .typebar{flex-wrap:nowrap;overflow-x:auto;margin-inline:-1rem;padding:0 1rem .3rem;scrollbar-width:none}
+  .typebar::-webkit-scrollbar{display:none}
+  .tcount{white-space:nowrap;flex:0 0 auto}
+}
+
+/* kinetic headline: soft word reveal + drawn gradient underline */
+.kin .w{display:inline-block;opacity:0;transform:translateY(.45em);filter:blur(8px);animation:kinIn .9s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(.15s + var(--i)*.22s)}
+@keyframes kinIn{to{opacity:1;transform:none;filter:blur(0)}}
+.kin .hl::after{background:linear-gradient(90deg,#8B85FF,#2DD4BF)!important;height:.12em!important;bottom:-.04em!important;opacity:1!important;transform:scaleX(0);transform-origin:right;animation:ul .9s cubic-bezier(.22,1,.36,1) 1.1s forwards,ulg 5s ease-in-out 2.2s infinite}
+@keyframes ul{to{transform:scaleX(1)}}
+@keyframes ulg{50%{filter:brightness(1.35)}}
+@media (prefers-reduced-motion:reduce){.kin .w,.kin .hl::after{animation:none!important;opacity:1;transform:none;filter:none}}
 </style>
 </head>
 <body>
@@ -459,7 +614,15 @@ footer a:hover{color:var(--ink)}
       <a href="#how" data-nav="how"><svg class="ic"><use href="#i-help"/></svg>كيف يعمل</a>
     </nav>
     <div class="top-actions">
-      <a class="icon-btn" href="#events" aria-label="الفعاليات" id="evMobile" style="display:none"><svg class="ic"><use href="#i-cal"/></svg></a>
+      <div class="more"><button type="button" class="icon-btn more-btn" id="moreBtn" aria-label="القائمة" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="12" cy="19" r="1.9"/></svg></button>
+        <div class="more-menu" id="moreMenu" role="menu">
+          <a role="menuitem" href="#home" data-nav="home"><svg class="ic"><use href="#i-home"/></svg>الرئيسية</a>
+          <a role="menuitem" href="#projects" data-nav="projects"><svg class="ic"><use href="#i-grid"/></svg>المشاريع</a>
+          <a role="menuitem" href="#talents" data-nav="talents"><svg class="ic"><use href="#i-users"/></svg>المواهب</a>
+          <a role="menuitem" href="#events" data-nav="events"><svg class="ic"><use href="#i-cal"/></svg>الفعاليات</a>
+          <a role="menuitem" href="#how" data-nav="how"><svg class="ic"><use href="#i-help"/></svg>كيف يعمل</a>
+        </div></div>
+      <a class="icon-btn search-btn" href="#projects" data-focus-search aria-label="بحث"><svg class="ic"><use href="#i-search"/></svg></a>
       <a class="icon-btn" href="#me" aria-label="الإشعارات" id="bell"><svg class="ic"><use href="#i-bell"/></svg></a>
       <a class="btn sm hide-sm" href="#new"><svg class="ic"><use href="#i-plus"/></svg>انشر مشروعك</a>
       <a class="me-chip" href="#me" id="meChip" aria-label="ملفي"></a>
@@ -512,7 +675,7 @@ const SPECS = {
   business_manager:['مدير أعمال','biz'], project_manager:['مدير مشاريع','biz'], financial_analyst:['محلل مالي','biz'], marketing_bd:['تسويق وتطوير أعمال','biz'], design_innovation_manager:['مدير تصميم وابتكار','biz'],
   content_creator:['صانع محتوى','content'], content_writer:['كاتب محتوى','content'], story_writer:['كاتب قصص','content'], researcher:['باحث','content'], translator:['مترجم علمي/أكاديمي','content']
 };
-const TYPES = { grad:['مشروع تخرج','i-cap'], hackathon:['هاكاثون','i-code'], competition:['مسابقة','i-trophy'], business:['مشروع تجاري','i-brief'], non_profit:['غير ربحي','i-heart'] };
+const TYPES = { grad:['مشروع تخرج','i-cap'], hackathon:['هاكاثون','i-code'], competition:['مسابقة','i-trophy'], business:['ريادة أعمال','i-brief'], non_profit:['غير ربحي','i-heart'] };
 const STATUS = { not_started:'لم يبدأ بعد', in_progress:'قيد التنفيذ', completed:'مكتمل' };
 const CITIES = ['المدينة المنورة','الرياض','جدة','مكة المكرمة','الدمام','الخبر','الطائف','أبها','تبوك','حائل'];
 
@@ -618,28 +781,42 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 /* ------------------------------------------------------------------ components */
 function roleChip(n){ const [l,g]=SPECS[n.spec]; const open=n.slots-n.filled; return `<li class="chip role g-${g} ${open<=0?'full':''}">${esc(l)}${open>0?` <em class="num">${open>1?'×'+open:''}</em>`:''}</li>`; }
 function matches(p){ const m=me(); return m && p.ownerId!==m.id && isOpen(p) && p.needs.some(n=>n.slots>n.filled && m.specs.includes(n.spec)); }
-function ticket(p){
+const CHEV='<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const FILT='<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+const isMob=()=>matchMedia('(max-width:48rem)').matches;
+function accBtn(label,open){ return `<button type="button" class="acc-btn" data-acc aria-expanded="${!!open}">${label}${CHEV}</button>`; }
+function exploreTabs(active){
+  const o=projects().filter(isOpen).length, up=EVENTS.filter(e=>daysLeft(e.end)>=0).length;
+  const t=[['projects','المشاريع','i-grid',o],['talents','المواهب','i-users',talents().length],['events','الفعاليات','i-cal',up]];
+  return `<div class="xtabs" role="tablist" aria-label="استكشف">${t.map(([k,l,i,n])=>`<a role="tab" href="#${k}" aria-selected="${k===active}">${ic(i)}<span>${l}</span><em class="num">${n}</em></a>`).join('')}</div>`;
+}
+function activeFilters(){ return [F.type,F.spec,F.group,F.status,F.mode,F.event,F.sort!=='new'?1:'',F.openOnly?'':1].filter(Boolean).length; }
+function activeTFilters(){ return [TF.uni,TF.avail?1:''].filter(Boolean).length; }
+function ticket(p,o={}){
   const [tl,ti]=TYPES[p.type]; const [cl,soon]=closesLabel(p.deadline); const saved=S.saved.includes(p.id);
-  return `<article class="ticket card-hover">
+  return `<article class="ticket card-hover${o.open?' is-open':''}">
     <div class="stub type-${p.type}"><b>${ic(ti)}${tl}</b><span class="st"><i class="dot ${p.status}"></i>${STATUS[p.status]}</span></div>
     <div class="tbody">
       <div class="trow"><h3><a href="#project-${p.id}">${esc(p.title)}</a></h3>
         <button class="save" data-save="${p.id}" aria-pressed="${saved}" aria-label="${saved?'إزالة من المحفوظة':'احفظ المشروع'}">${ic('i-bookmark')}</button></div>
-      <p class="blurb">${esc(p.desc)}</p>
       <ul class="chips">${p.needs.map(roleChip).join('')}</ul>
+      <div class="acc-sum"><span class="${soon&&daysLeft(p.deadline)>=0?'soon':''}">${ic('i-clock')}${cl}</span>${accBtn('التفاصيل',o.open)}</div>
+      <div class="acc-body"><p class="blurb">${esc(p.desc)}</p>
       <div class="tmeta">
         <span>${ic('i-pin')}${esc(p.city)}${p.remote?'، أو عن بُعد':' (حضوري)'}</span>
         <span class="${soon&&daysLeft(p.deadline)>=0?'soon':''}">${ic('i-clock')}${cl}</span>
         <span>${avatar(p.owner,'sm',groupOf(p.needs[0].spec))}${esc(p.owner)}</span>
         ${matches(p)?`<span class="pill match">${ic('i-spark')}يناسب مهاراتك</span>`:''}
       </div>
+      <a class="btn sm open-link" href="#project-${p.id}">افتح المشروع ${ic('i-arrow')}</a></div>
     </div></article>`;
 }
 function talentCard(t){
   return `<article class="tcard card-hover">
     <div class="who">${avatar(t.name,'',tGroup(t))}<div><b><a href="#talent-${t.id}">${esc(t.name)}</a></b><span>${esc(t.major)} · ${esc(t.uni)} · ${esc(t.city)}</span></div></div>
     <ul class="chips">${t.specs.map(s=>`<li class="chip role g-${groupOf(s)}">${esc(SPECS[s][0])}</li>`).join('')}</ul>
-    <p class="blurb" style="font-size:.92rem">${esc(t.bio)}</p>
+    <div class="acc-sum">${accBtn('نبذة عن '+esc(t.name.split(' ')[0]))}</div>
+    <div class="acc-body"><p class="blurb" style="font-size:.92rem">${esc(t.bio)}</p></div>
     <div class="foot"><span class="avail ${t.avail?'on':''}"><i></i>${t.avail?'متاح الآن':'مشغول حاليًا'}</span>
       ${t.id!==S.meId?`<button class="btn ghost sm" data-invite="${t.id}">ادعُه لمشروعك</button>`:'<span class="pill">أنت</span>'}</div>
   </article>`;
@@ -651,7 +828,8 @@ function eventCard(e){
     <div class="edate"><b class="num">${d.getDate()}</b><span>${fmtM.format(d)}</span></div>
     <div class="ebody"><span class="kind">${e.kind}</span><h3>${esc(e.title)}</h3>
       <div class="tmeta"><span>${ic('i-pin')}${e.city} · ${e.mode}</span><span>${ic('i-users')}الفريق ${e.size}</span><span class="${soon?'soon':''}">${ic('i-clock')}التسجيل ${cl.replace('يغلق','يُغلق').replace('أُغلق الانضمام','مغلق')}</span></div>
-      <ul class="chips">${e.tracks.map(t=>`<li class="chip">${t}</li>`).join('')}</ul>
+      <div class="acc-sum">${accBtn('المسارات')}</div>
+      <div class="acc-body"><ul class="chips">${e.tracks.map(t=>`<li class="chip">${t}</li>`).join('')}</ul></div>
       <div class="acts">${teams?`<a class="btn sm" href="#projects" data-event-filter="${e.id}">${teams>2?`تصفّح ${plural(teams,W.team)} تتكوّن`:teams===2?'تصفّح الفريقين':'تصفّح الفريق المتكوّن'}</a><a class="btn ghost sm" href="#new" data-event-new="${e.id}">كوّن فريقًا لها</a>`:`<a class="btn sm" href="#new" data-event-new="${e.id}">كوّن أول فريق لها</a>`}</div>
     </div></article>`;
 }
@@ -689,24 +867,16 @@ function viewHome(){
   const groupCount=g=>open.reduce((a,p)=>a+p.needs.filter(n=>groupOf(n.spec)===g&&n.slots>n.filled).reduce((x,n)=>x+n.slots-n.filled,0),0);
   return `
   <section class="hero">
-    <div>
+    <div class="hero-text">
       <span class="eyebrow"><i></i>لمشاريع التخرج والهاكاثونات وريادة الأعمال</span>
-      <h1 style="margin-top:1rem">لكل مشروع <span class="hl">عضد</span></h1>
+      <h1 class="kin" style="margin-top:1rem"><span class="w" style="--i:0">لكل</span> <span class="w" style="--i:1">مشروع</span> <span class="hl w" style="--i:2">عضد</span></h1>
       <p class="lede">بدلًا من أن تكتب «مين يعرف يبرمج؟» في قروبات الجامعة والهاكاثونات، انشر مشروعك وحدِّد التخصصات التي تنقصك، ودع أصحاب المهارة يصلون إليك.</p>
       <form class="search" id="heroSearch" role="search"><label class="sr" for="hq">ابحث</label>${ic('i-search')}<input id="hq" type="text" placeholder="مهارة أو مشروع، مثل: طباعة 3D" autocomplete="off"><button class="btn" type="submit">ابحث</button></form>
       <div class="quick">جرّب: ${['طباعة 3D','مطوّر تطبيقات','مصمم UI/UX','معلق صوتي','محلل مالي'].map(q=>`<button class="chip" data-quick="${q}">${q}</button>`).join('')}</div>
       <div class="hero-ctas"><a class="btn" href="#new">${ic('i-plus')}انشر مشروعك</a><a class="btn ghost" href="#me" data-metab="skills">اعرض مهاراتك</a></div>
+      <div class="typebar" role="group" aria-label="المشاريع المفتوحة حسب النوع">${[['grad','مشاريع التخرج'],['business','ريادة الأعمال'],['hackathon','هاكاثونات'],['competition','مسابقات'],['non_profit','غير ربحي']].map(([k,l],i)=>`<button type="button" class="tcount${i<2?' big':''}" data-typego="${k}">${ic(TYPES[k][1])}<span>${l}</span><b class="num">${open.filter(p=>p.type===k).length}</b></button>`).join('')}</div>
     </div>
-    <div class="chat" aria-label="مثال: من رسائل القروب إلى عضد">
-      <div class="chat-head">${avatar('ق','sm','content')}<div>قروب هاكاثون الجامعة<small>248 عضوًا</small></div></div>
-      <div class="chat-body">
-        <div class="bub"><b>طالب هندسة <span class="nr">بلا ردود منذ يومين</span></b>مين يعرف يطبع 3D؟ عندي مشروع تخرج والتسليم قريب</div>
-        <div class="bub"><b>طالبة إعلام</b>نبي مصمم للهاكاثون قبل الخميس</div>
-        <div class="bub"><b>طالب حاسب <span class="nr">بلا ردود</span></b>أحد يعرف يبرمج تطبيقات؟</div>
-      </div>
-      <div class="chat-split">${SYMBOL_LIGHT}على عضد: طلب واحد، وصلته الموهبة المناسبة</div>
-      <div class="match-card">${avatar('عبدالرحمن','','design')}<div class="who"><b>عبدالرحمن الجهني</b><span>مصمم نماذج أولية وطباعة 3D · لديه طابعة</span></div><span class="avail on"><i></i>متاح</span></div>
-    </div>
+    <canvas id="net" aria-hidden="true"></canvas>
   </section>
 
   <div class="stats">
@@ -716,7 +886,7 @@ function viewHome(){
     <div class="stat"><b>${Object.keys(SPECS).length}</b><span>تخصصات في 4 مجالات</span></div>
   </div>
 
-  <section class="section verse">${SYMBOL}<div><blockquote>﴿سَنَشُدُّ عَضُدَكَ بِأَخِيكَ﴾</blockquote><p>من هذه الآية أخذنا اسمنا. العضد هو السند والقوة، وفي شعارنا يدان متماسكتان بين العين والدال: صاحب المهارة وصاحب المشروع يشدّ كل منهما عضد الآخر، وفوق قبضتهما مصباح أحمر هو الفكرة التي تضيء حين يجتمعان.</p></div></section>
+  <details class="section verse" ${isMob()?'':'open'}><summary>${SYMBOL}<blockquote>﴿سَنَشُدُّ عَضُدَكَ بِأَخِيكَ﴾</blockquote><span class="vmore">فلسفة الاسم والشعار ${CHEV}</span></summary><div><p>من هذه الآية أخذنا اسمنا: العضد هو السند والقوة، وكل مشروع يحتاج من يشدّ عضده.</p><ul class="phil"><li><b>قبضتان تلتقيان</b> مهارة (فيروزي) ومشروع (نيلي) في مكان الضاد، فلا يكتمل الاسم إلا باجتماعهما.</li><li><b>مصباح أحمر</b> هو نقطة الضاد وشرارة الفكرة، لا يضيء إلا حين تتصافح اليدان.</li><li><b>حروف بيضاء واضحة</b> يُقرأ بها «عضد» من النظرة الأولى، وتبقى ثابتة بينما تتغير المشاريع والمهارات.</li></ul></div></details>
 
   ${forMe.length?`<section class="section"><div class="sec-head"><div><h2>مشاريع تناسب مهاراتك</h2><p>بناءً على ملفك: ${m.specs.map(s=>SPECS[s][0]).join('، ')}</p></div><a class="link" href="#projects">كل المشاريع ${ic('i-arrow')}</a></div><div class="tickets">${forMe.map(ticket).join('')}</div></section>`:''}
 
@@ -754,11 +924,11 @@ function filterProjects(){
 function viewProjects(){
   const specOpts=Object.entries(GROUPS).map(([g,v])=>`<optgroup label="${v.label}">${Object.entries(SPECS).filter(([,x])=>x[1]===g).map(([k,[l]])=>`<option value="${k}" ${F.spec===k?'selected':''}>${l}</option>`).join('')}</optgroup>`).join('');
   const ev=EVENTS.find(e=>e.id===F.event);
-  return `<div class="page-head"><div><h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">المشاريع</h1><p>مشاريع تخرج، هاكاثونات، مسابقات ومشاريع ناشئة تبحث عن أعضاء. اختر دورًا واطلب الانضمام.</p></div><a class="btn" href="#new">${ic('i-plus')}انشر مشروعك</a></div>
-  <div class="filters">
-    <div class="frow"><div class="search"><label class="sr" for="pq">ابحث في المشاريع</label>${ic('i-search')}<input id="pq" type="text" value="${esc(F.q)}" placeholder="ابحث بالاسم أو المهارة: برمجة، طباعة 3D، تعليق صوتي…" autocomplete="off"></div></div>
-    <div class="scroll-x" role="group" aria-label="نوع المشروع"><button class="chip" data-ftype="" aria-pressed="${!F.type}">كل الأنواع</button>${Object.entries(TYPES).map(([k,[l,i]])=>`<button class="chip" data-ftype="${k}" aria-pressed="${F.type===k}">${ic(i)}${l}</button>`).join('')}</div>
-    <div class="frow">
+  return `${exploreTabs('projects')}<div class="page-head"><div><h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">المشاريع</h1><p>مشاريع تخرج، هاكاثونات، مسابقات ومشاريع ناشئة تبحث عن أعضاء. اختر دورًا واطلب الانضمام.</p></div><a class="btn" href="#new">${ic('i-plus')}انشر مشروعك</a></div>
+  <div class="filters${activeFilters()&&!isMob()?' open':''}" id="filters">
+    <div class="frow fsearch"><div class="search"><label class="sr" for="pq">ابحث في المشاريع</label>${ic('i-search')}<input id="pq" type="text" value="${esc(F.q)}" placeholder="ابحث بالاسم أو المهارة…" autocomplete="off"></div><button type="button" class="ftoggle" data-ftoggle aria-expanded="false" aria-controls="fpanel">${FILT}<span>تصفية</span>${activeFilters()?`<b class="fbadge num">${activeFilters()}</b>`:''}</button></div>
+    <div class="scroll-x" role="group" aria-label="نوع المشروع"><button class="chip" data-ftype="" aria-pressed="${!F.type}">كل الأنواع<em class="cnt num">${projects().filter(isOpen).length}</em></button>${Object.entries(TYPES).map(([k,[l,i]])=>`<button class="chip" data-ftype="${k}" aria-pressed="${F.type===k}">${ic(i)}${l}<em class="cnt num">${projects().filter(p=>isOpen(p)&&p.type===k).length}</em></button>`).join('')}</div>
+    <div class="fpanel" id="fpanel"><div class="frow">
       <label class="f" for="fspec">التخصص المطلوب<select id="fspec"><option value="">كل التخصصات</option>${specOpts}</select></label>
       <label class="f" for="fgroup">المجال<select id="fgroup"><option value="">كل المجالات</option>${Object.entries(GROUPS).map(([g,v])=>`<option value="${g}" ${F.group===g?'selected':''}>${v.label}</option>`).join('')}</select></label>
       <label class="f" for="fstatus">الحالة<select id="fstatus"><option value="">كل الحالات</option>${Object.entries(STATUS).map(([k,l])=>`<option value="${k}" ${F.status===k?'selected':''}>${l}</option>`).join('')}</select></label>
@@ -766,6 +936,7 @@ function viewProjects(){
       <label class="f" for="fsort">الترتيب<select id="fsort"><option value="new">الأحدث</option><option value="closing" ${F.sort==='closing'?'selected':''}>الأقرب إغلاقًا</option><option value="roles" ${F.sort==='roles'?'selected':''}>الأكثر شواغر</option></select></label>
     </div>
     <div class="frow" style="justify-content:space-between"><label class="toggle"><input type="checkbox" id="fopen" ${F.openOnly?'checked':''}>المشاريع المفتوحة للانضمام فقط</label>${ev?`<span class="pill match">${ic('i-cal')}فعالية: ${ev.title} <button class="chip" style="padding:0 .4rem" data-clear-event aria-label="إزالة فلتر الفعالية">${ic('i-x')}</button></span>`:''}</div>
+    </div>
   </div>
   <div class="count-row"><span id="pcount" class="num"></span><button class="link" style="background:none;border:0;cursor:pointer" id="fclear">مسح الفلاتر</button></div>
   <div class="tickets" id="presults"></div>`;
@@ -816,12 +987,13 @@ function reqRow(r){ const t=talentById(r.from); const st={pending:['بانتظا
 
 function viewTalents(){
   const unis=[...new Set(SEED_TALENTS.map(t=>t.uni))];
-  return `<div class="page-head"><div><h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">المواهب</h1><p>طلاب وخريجون عرضوا مهاراتهم. ابحث عن التخصص الذي ينقص فريقك وادعُه مباشرة.</p></div><a class="btn ghost" href="#me" data-metab="skills">${ic('i-user')}اعرض مهاراتك</a></div>
-  <div class="filters">
-    <div class="frow"><div class="search"><label class="sr" for="tq">ابحث في المواهب</label>${ic('i-search')}<input id="tq" type="text" value="${esc(TF.q)}" placeholder="مثل: طباعة 3D، مونتاج، Flutter، ترجمة" autocomplete="off"></div>
-      <label class="f" for="tuni" style="flex:0 1 14rem">الجامعة<select id="tuni"><option value="">كل الجامعات</option>${unis.map(u=>`<option ${TF.uni===u?'selected':''}>${u}</option>`).join('')}</select></label></div>
-    <div class="frow" style="justify-content:space-between"><div class="scroll-x" role="group" aria-label="المجال"><button class="chip" data-tgroup="" aria-pressed="${!TF.group}">كل المجالات</button>${Object.entries(GROUPS).map(([g,v])=>`<button class="chip role g-${g}" data-tgroup="${g}" aria-pressed="${TF.group===g}">${v.label}</button>`).join('')}</div>
-    <label class="toggle"><input type="checkbox" id="tavail" ${TF.avail?'checked':''}>المتاحون الآن فقط</label></div>
+  return `${exploreTabs('talents')}<div class="page-head"><div><h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">المواهب</h1><p>طلاب وخريجون عرضوا مهاراتهم. ابحث عن التخصص الذي ينقص فريقك وادعُه مباشرة.</p></div><a class="btn ghost" href="#me" data-metab="skills">${ic('i-user')}اعرض مهاراتك</a></div>
+  <div class="filters${activeTFilters()&&!isMob()?' open':''}" id="filters">
+    <div class="frow fsearch"><div class="search"><label class="sr" for="tq">ابحث في المواهب</label>${ic('i-search')}<input id="tq" type="text" value="${esc(TF.q)}" placeholder="ابحث عن مهارة…" autocomplete="off"></div><button type="button" class="ftoggle" data-ftoggle aria-expanded="false" aria-controls="fpanel">${FILT}<span>تصفية</span>${activeTFilters()?`<b class="fbadge num">${activeTFilters()}</b>`:''}</button></div>
+    <div class="scroll-x" role="group" aria-label="المجال"><button class="chip" data-tgroup="" aria-pressed="${!TF.group}">كل المجالات</button>${Object.entries(GROUPS).map(([g,v])=>`<button class="chip role g-${g}" data-tgroup="${g}" aria-pressed="${TF.group===g}">${v.label}</button>`).join('')}</div>
+    <div class="fpanel" id="fpanel"><div class="frow" style="justify-content:space-between">
+      <label class="f" for="tuni" style="flex:0 1 14rem">الجامعة<select id="tuni"><option value="">كل الجامعات</option>${unis.map(u=>`<option ${TF.uni===u?'selected':''}>${u}</option>`).join('')}</select></label>
+      <label class="toggle"><input type="checkbox" id="tavail" ${TF.avail?'checked':''}>المتاحون الآن فقط</label></div></div>
   </div>
   <div class="count-row"><span id="tcount" class="num"></span></div>
   <div class="grid g3" id="tresults"></div>`;
@@ -854,7 +1026,7 @@ function viewTalent(id){
 
 function viewEvents(){
   const list=EVENTS.filter(e=>daysLeft(e.end)>=0);
-  return `<div class="page-head"><div><h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">الهاكاثونات والفعاليات</h1><p>الفعاليات القادمة والفرق التي تتكوّن لكل منها. انضم لفريق قائم أو كوّن فريقك واطلب التخصصات الناقصة.</p></div></div>
+  return `${exploreTabs('events')}<div class="page-head"><div><h1 style="font-size:clamp(1.8rem,4vw,2.6rem)">الهاكاثونات والفعاليات</h1><p>الفعاليات القادمة والفرق التي تتكوّن لكل منها. انضم لفريق قائم أو كوّن فريقك واطلب التخصصات الناقصة.</p></div></div>
   <div class="grid g2">${list.map(eventCard).join('')}</div>
   <div class="panel" style="margin-top:1.5rem;display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap"><div><h3>تنظّم هاكاثونًا أو معرض تخرج؟</h3><p class="muted" style="margin-top:.3rem">أضف فعاليتك ليكوّن المشاركون فرقهم على عضد قبل يوم الافتتاح.</p></div><button class="btn ghost" data-organizer>أضف فعالية</button></div>`;
 }
@@ -971,6 +1143,7 @@ function route(){
   if(h==='projects') renderProjectResults();
   if(h==='talents') renderTalentResults();
   if(h==='new') bindWizard();
+  if(h==='home') initNet();
   header();
   const titles={home:'عضد',projects:'المشاريع · عضد',talents:'المواهب · عضد',events:'الفعاليات · عضد',new:'انشر مشروعك · عضد',me:'ملفي · عضد',how:'كيف يعمل · عضد'};
   document.title = titles[h] || (h.startsWith('project-')? (projectById(h.slice(8))?.title||'مشروع')+' · عضد' : h.startsWith('talent-')? (talentById(h.slice(7))?.name||'موهبة')+' · عضد' : 'عضد');
@@ -1014,6 +1187,12 @@ document.addEventListener('click',e=>{
 });
 function persistProject(p){ const u=S.userProjects.find(x=>x.id===p.id); if(u) Object.assign(u,p); else { const seed=SEED_PROJECTS.find(x=>x.id===p.id); S.patches=S.patches||{}; S.patches[p.id]=p.needs.map(n=>n.filled); } }
 function applyPatches(){ if(!S.patches) return; Object.entries(S.patches).forEach(([id,arr])=>{ const p=SEED_PROJECTS.find(x=>x.id==id); if(p) p.needs.forEach((n,i)=>{ if(arr[i]!=null) n.filled=arr[i]; }); }); }
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-acc]'); if(a){ const c=a.closest('article'); const o=c.classList.toggle('is-open'); a.setAttribute('aria-expanded',o); return; }
+  const f=e.target.closest('[data-ftoggle]'); if(f){ const bx=$('#filters'); const o=bx.classList.toggle('open'); f.setAttribute('aria-expanded',o); return; }
+  const tg=e.target.closest('[data-typego]'); if(tg){ Object.assign(F,{type:tg.dataset.typego,group:'',spec:'',q:'',event:''}); location.hash='projects'; return; }
+  if(e.target.closest('[data-focus-search]')){ setTimeout(()=>{ const i=$('#pq'); i&&i.focus(); },60); }
+});
 document.addEventListener('input',e=>{
   const id=e.target.id;
   if(id==='pq'){ F.q=e.target.value; renderProjectResults(); }
@@ -1034,7 +1213,7 @@ document.addEventListener('submit',e=>{
 });
 
 function bindWizard(){
-  const d=S.draft; const f=$('#wiz'); const prev=()=>{ $('#wprev').innerHTML=ticket(draftAsProject(d)); };
+  const d=S.draft; const f=$('#wiz'); const prev=()=>{ $('#wprev').innerHTML=ticket(draftAsProject(d),{open:true}); };
   const keep=()=>{ save(); prev(); };
   f.addEventListener('input',e=>{ const id=e.target.id;
     if(id==='wtitle') d.title=e.target.value; if(id==='wuni') d.uni=e.target.value; if(id==='wdesc'){ d.desc=e.target.value; $('#dcount').textContent=d.desc.length; } keep(); });
@@ -1057,7 +1236,84 @@ function bindWizard(){
 }
 
 /* mobile: show events shortcut */
-const mq=matchMedia('(max-width:48rem)'); const evm=()=>$('#evMobile').style.display=mq.matches?'inline-grid':'none'; mq.addEventListener?mq.addEventListener('change',evm):0; evm();
+
+
+/* ---- creative hero: skills meet projects ---- */
+let netRaf=0;
+function initNet(){
+  cancelAnimationFrame(netRaf);
+  const cv=document.getElementById('net'); if(!cv) return;
+  const ctx=cv.getContext('2d'), hero=cv.parentElement;
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const fam=getComputedStyle(document.body).fontFamily||'sans-serif';
+  const COL={tech:'#8B85FF',design:'#E879B9',biz:'#FBBF24',content:'#2DD4BF'};
+  const SK=[['مبرمج','tech'],['مصمم UI','design'],['طباعة 3D','design'],['مونتاج','content'],['محلل مالي','biz'],['تعليق صوتي','content'],['باحث','biz'],['مطوّر تطبيقات','tech'],['مصوّر','content'],['ذكاء اصطناعي','tech'],['مدير منتج','biz'],['كاتب محتوى','content']];
+  const PR=[['مشروع تخرج','#8B85FF'],['ريادة أعمال','#FBBF24'],['هاكاثون','#2DD4BF'],['مسابقة','#E879B9'],['مشروع تخرج','#8B85FF'],['غير ربحي','#EF4444']];
+  let W=0,H=0,dpr=1,nodes=[],links=[],flashes=[],mouse={x:-999,y:-999},vis=true,last=0,next=600,seed=7;
+  const rnd=()=>{ seed=(seed*16807)%2147483647; return (seed-1)/2147483646; };
+  function layout(){
+    const r=cv.getBoundingClientRect(); W=r.width; H=r.height; dpr=Math.min(2,devicePixelRatio||1);
+    cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    const wide=W>760; const R=wide?{x0:W*.04,x1:W*.45,y0:60,y1:H-60}:{x0:56,x1:W-56,y0:30,y1:Math.min(280,H*.5)};
+    const nS=wide?SK.length:8, nP=wide?PR.length:4; nodes=[]; links=[]; seed=7;
+    const place=(kind,label,color,n,minD)=>{ for(let k=0;k<60;k++){ const x=R.x0+rnd()*(R.x1-R.x0), y=R.y0+rnd()*(R.y1-R.y0); if(nodes.every(o=>Math.hypot(o.bx-x,o.by-y)>minD)||k===59){ nodes.push({kind,label,color,bx:x,by:y,x,y,vx:0,vy:0,ph:rnd()*6.28,sp:.35+rnd()*.5,amp:6+rnd()*10,n:0}); return; } } };
+    for(let i=0;i<nP;i++) place('p',PR[i][0],PR[i][1],0,wide?120:90);
+    for(let i=0;i<nS;i++) place('s',SK[i][0],COL[SK[i][1]],0,wide?70:56);
+  }
+  function link(a,b,t){ if(links.some(l=>l.a===a||l.b===b&&l.b.n>=3)) return; a.busy=true; b.n++; links.push({a,b,t0:t,done:false}); }
+  function spawn(t){ const S=nodes.filter(n=>n.kind==='s'&&!n.busy), P=nodes.filter(n=>n.kind==='p'&&n.n<3); if(!S.length||!P.length) return; const a=S[(rnd()*S.length)|0]; let b=P[0],bd=1e9; P.forEach(p=>{ const d=Math.hypot(p.x-a.x,p.y-a.y)+rnd()*160; if(d<bd){bd=d;b=p;} }); link(a,b,t); }
+  function pos(t){ nodes.forEach(n=>{ let tx=n.bx+Math.sin(t/1000*n.sp+n.ph)*n.amp, ty=n.by+Math.cos(t/1000*n.sp*.9+n.ph)*n.amp;
+      const dx=n.x-mouse.x, dy=n.y-mouse.y, d=Math.hypot(dx,dy); if(d<130){ const f=(130-d)/130*26; tx+=dx/(d||1)*f; ty+=dy/(d||1)*f; }
+      n.x+=(tx-n.x)*.08; n.y+=(ty-n.y)*.08; }); }
+  function bulb(x,y,a,sc){ ctx.save(); ctx.translate(x,y); ctx.globalAlpha=a;
+    const g=ctx.createRadialGradient(0,0,0,0,0,26*sc); g.addColorStop(0,'rgba(239,68,68,.55)'); g.addColorStop(1,'rgba(239,68,68,0)'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(0,0,26*sc,0,6.28); ctx.fill();
+    ctx.fillStyle='#EF4444'; ctx.beginPath(); ctx.arc(0,-2*sc,6*sc,0,6.28); ctx.fill();
+    ctx.fillStyle='#fff'; ctx.fillRect(-3*sc,4*sc,6*sc,1.6*sc); ctx.fillRect(-2*sc,6.6*sc,4*sc,1.4*sc);
+    ctx.strokeStyle='#EF4444'; ctx.lineWidth=1.4; ctx.lineCap='round'; for(const an of [-2.4,-1.57,-.74]){ ctx.beginPath(); ctx.moveTo(Math.cos(an)*10*sc,-2*sc+Math.sin(an)*10*sc); ctx.lineTo(Math.cos(an)*14*sc,-2*sc+Math.sin(an)*14*sc); ctx.stroke(); }
+    ctx.restore(); }
+  function label(txt,x,y,col,al,bold){ ctx.save(); ctx.font=`${bold?700:500} ${bold?13:11.5}px ${fam}`; ctx.direction='rtl'; ctx.textAlign='center'; ctx.globalAlpha=al; ctx.fillStyle=col; ctx.fillText(txt,x,y); ctx.restore(); }
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    // pointer halo + faint lines to nearby skills
+    if(mouse.x>-900){ const g=ctx.createRadialGradient(mouse.x,mouse.y,0,mouse.x,mouse.y,150); g.addColorStop(0,'rgba(139,133,255,.18)'); g.addColorStop(1,'rgba(139,133,255,0)'); ctx.fillStyle=g; ctx.fillRect(mouse.x-150,mouse.y-150,300,300);
+      nodes.forEach(n=>{ const d=Math.hypot(n.x-mouse.x,n.y-mouse.y); if(d<170){ ctx.strokeStyle=n.color; ctx.globalAlpha=(1-d/170)*.5; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(mouse.x,mouse.y); ctx.lineTo(n.x,n.y); ctx.stroke(); ctx.globalAlpha=1; } }); }
+    // links
+    links.forEach(l=>{ const age=(t-l.t0)/1000, grow=Math.min(1,age/.9), fade=age>5?Math.max(0,1-(age-5)/.7):1; if(fade<=0){ l.dead=true; return; }
+      const a=l.a,b=l.b, ex=a.x+(b.x-a.x)*grow, ey=a.y+(b.y-a.y)*grow, mx=(a.x+b.x)/2, my=(a.y+b.y)/2-18;
+      const g=ctx.createLinearGradient(a.x,a.y,b.x,b.y); g.addColorStop(0,a.color); g.addColorStop(1,b.color);
+      ctx.strokeStyle=g; ctx.globalAlpha=.85*fade; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.quadraticCurveTo(a.x+(mx-a.x)*grow,a.y+(my-a.y)*grow,ex,ey); ctx.stroke();
+      if(grow<1){ ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(ex,ey,3.2,0,6.28); ctx.fill(); }
+      else { if(!l.done){ l.done=true; flashes.push({x:mx,y:my+9,t0:t,c:b.color,px:b.x,py:b.y}); } ctx.fillStyle='#fff'; const q=((age*.6)%1); ctx.globalAlpha=.9*fade; ctx.beginPath(); ctx.arc(a.x+(b.x-a.x)*q,a.y+(b.y-a.y)*q+Math.sin(q*3.14)*-18*(1),2.4,0,6.28); ctx.fill(); }
+      ctx.globalAlpha=1; });
+    if(links.some(l=>l.dead)){ links.filter(l=>l.dead).forEach(l=>{ l.a.busy=false; l.b.n=Math.max(0,l.b.n-1); }); links=links.filter(l=>!l.dead); }
+    // nodes
+    nodes.forEach(n=>{
+      if(n.kind==='s'){ const g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,18); g.addColorStop(0,n.color+'88'); g.addColorStop(1,n.color+'00'); ctx.fillStyle=g; ctx.beginPath(); ctx.arc(n.x,n.y,18,0,6.28); ctx.fill();
+        ctx.fillStyle=n.color; ctx.beginPath(); ctx.arc(n.x,n.y,n.busy?6.5:5,0,6.28); ctx.fill(); label(n.label,n.x,n.y+22,'#EDF0F7',n.busy?1:.7,false); }
+      else { const s=17; ctx.save(); ctx.translate(n.x,n.y); ctx.fillStyle='#141A2B'; ctx.strokeStyle=n.color; ctx.lineWidth=1.8; ctx.beginPath(); ctx.roundRect(-s,-s,s*2,s*2,9); ctx.fill(); ctx.stroke();
+        for(let i=0;i<3;i++){ ctx.beginPath(); ctx.arc(-9+i*9,0,3,0,6.28); ctx.fillStyle=i<n.n?n.color:'#273049'; ctx.fill(); } ctx.restore(); label(n.label,n.x,n.y+36,'#EDF0F7',1,true); } });
+    // bulbs
+    flashes=flashes.filter(f=>t-f.t0<2600); flashes.forEach(f=>{ const a=(t-f.t0)/2600, k=a<.12?a/.12:1-(a-.12)/.88, sc=.8+Math.min(1,a*6)*.5; bulb(f.x,f.y-4,Math.max(0,k),sc);
+      const rr=(t-f.t0)/700; if(rr<1){ ctx.strokeStyle=f.c; ctx.globalAlpha=1-rr; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(f.px,f.py,20+rr*30,0,6.28); ctx.stroke(); ctx.globalAlpha=1; } });
+  }
+  const frame=t=>{ if(!document.body.contains(cv)) return; netRaf=requestAnimationFrame(frame); if(!vis||document.hidden) return;
+    if(t>next && links.length<4){ spawn(t); next=t+1300+rnd()*900; } pos(t); draw(t); };
+  layout(); new ResizeObserver(()=>{ layout(); }).observe(cv);
+  hero.addEventListener('pointermove',e=>{ const r=cv.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top; },{passive:true});
+  hero.addEventListener('pointerleave',()=>{ mouse.x=mouse.y=-999; });
+  hero.addEventListener('pointerdown',e=>{ if(e.target.closest('button,a,input,form')) return; const r=cv.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top; const S=nodes.filter(n=>n.kind==='s'&&!n.busy).sort((p,q)=>Math.hypot(p.x-x,p.y-y)-Math.hypot(q.x-x,q.y-y)); const P=nodes.filter(n=>n.kind==='p'&&n.n<3).sort((p,q)=>Math.hypot(p.x-x,p.y-y)-Math.hypot(q.x-x,q.y-y)); if(S[0]&&P[0]) link(S[0],P[0],performance.now()); },{passive:true});
+  try{ new IntersectionObserver(es=>{ vis=es[0].isIntersecting; }).observe(cv); }catch(e){}
+  if(reduce){ pos(0); for(let i=0;i<3;i++) spawn(-4000); links.forEach(l=>l.t0=-4000); draw(0); const ls=links; links=[]; links=ls; flashes=[]; draw(0); return; }
+  netRaf=requestAnimationFrame(frame);
+}
+(function(){
+  const btn=document.getElementById('moreBtn'), menu=document.getElementById('moreMenu');
+  const close=()=>{ menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); };
+  btn.addEventListener('click',e=>{ e.stopPropagation(); const o=menu.classList.toggle('open'); btn.setAttribute('aria-expanded',o); });
+  document.addEventListener('click',e=>{ if(!e.target.closest('.more')) close(); else if(e.target.closest('#moreMenu a')) close(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') close(); });
+  window.addEventListener('hashchange',close);
+})();
 applyPatches(); route();
 </script>
 </body>
