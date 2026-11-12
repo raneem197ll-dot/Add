@@ -571,6 +571,16 @@ html,body{overflow-x:clip}
 @keyframes ul{to{transform:scaleX(1)}}
 @keyframes ulg{50%{filter:brightness(1.35)}}
 @media (prefers-reduced-motion:reduce){.kin .w,.kin .hl::after{animation:none!important;opacity:1;transform:none;filter:none}}
+
+/* عضد word motion: light sweep, gentle float, pulsing red bulb dot over the ض */
+.kin .hl{animation:kinIn .9s cubic-bezier(.22,1,.36,1) .59s forwards,wfloat 6s ease-in-out 2s infinite!important}
+@keyframes wfloat{50%{transform:translateY(-.06em)}}
+.kin .hl{background:linear-gradient(105deg,#F1F3FA 0 40%,#fff 48%,#9A94FF 52%,#F1F3FA 60% 100%);background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:kinIn .9s cubic-bezier(.22,1,.36,1) .59s forwards,wfloat 6s ease-in-out 2s infinite,sweep 5.5s ease-in-out 1.6s infinite!important}
+@keyframes sweep{0%{background-position:100% 0}45%,100%{background-position:0 0}}
+.kin .hl::before{content:"";position:absolute;left:calc(47.6% + .13em);top:.03em;width:.19em;height:.19em;border-radius:50%;background:#EF4444;box-shadow:0 0 .35em .08em rgba(239,68,68,.75);opacity:0;animation:dotIn .6s ease 1.5s forwards,dotPulse 2.8s ease-in-out 2.2s infinite;-webkit-text-fill-color:initial}
+@keyframes dotIn{to{opacity:1}}
+@keyframes dotPulse{50%{box-shadow:0 0 .6em .22em rgba(239,68,68,.95);transform:scale(1.18)}}
+@media (prefers-reduced-motion:reduce){.kin .hl,.kin .hl::before{animation:none!important;opacity:1}}
 </style>
 </head>
 <body>
