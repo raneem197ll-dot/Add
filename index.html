@@ -616,6 +616,9 @@ html,body{overflow-x:clip}
 .kin .hl .hm2{color:#8B85FF!important;-webkit-text-fill-color:#8B85FF!important;top:-.2em!important;animation:hmGlowP 3.6s ease-in-out 2.7s infinite!important}
 @keyframes hmGlowT{0%,100%{text-shadow:0 0 .18em rgba(45,212,191,.35)}50%{text-shadow:0 0 .55em rgba(45,212,191,1),0 0 1em rgba(45,212,191,.45)}}
 @keyframes hmGlowP{0%,100%{text-shadow:0 0 .18em rgba(139,133,255,.4)}50%{text-shadow:0 0 .55em rgba(139,133,255,1),0 0 1em rgba(139,133,255,.5)}}
+
+/* الخط تحت الكلمة بتدرج الثيم (بنفسجي → فيروزي) */
+.kin .hl::after{background:linear-gradient(90deg,#8B85FF,#2DD4BF,#8B85FF)!important;background-size:200% 100%!important;animation:ul .9s cubic-bezier(.22,1,.36,1) 1.1s forwards,ulm 5s linear 2s infinite!important}
 </style>
 </head>
 <body>
