@@ -619,6 +619,9 @@ html,body{overflow-x:clip}
 
 /* الخط تحت الكلمة بتدرج الثيم (بنفسجي → فيروزي) */
 .kin .hl::after{background:linear-gradient(90deg,#8B85FF,#2DD4BF,#8B85FF)!important;background-size:200% 100%!important;animation:ul .9s cubic-bezier(.22,1,.36,1) 1.1s forwards,ulm 5s linear 2s infinite!important}
+
+/* الخط تحت الكلمة: أصفر الثيم (--spark) الأصلي، ثابت وهادئ بدون نيون */
+.kin .hl::after{background:var(--spark)!important;background-size:auto!important;opacity:.9!important;filter:none!important;animation:ul .9s cubic-bezier(.22,1,.36,1) 1.1s forwards!important}
 </style>
 </head>
 <body>
